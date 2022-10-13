@@ -49,7 +49,7 @@ if %errorlevel% equ 0 (
     set ps=powershell.exe
 )
 rem Compress everything but resources.arsc
-call %ps% -nol -noni -nop -c "Compress-Archive (Get-ChildItem ""%unzipped%"" -Exclude 'resources.arsc') ""%dst_zip%"" -Force ; Compress-Archive ""%unzipped%\resources.arsc"" -Update ""%dst_zip%"" -CompressionLevel NoCompression"
+call %ps% -nol -noni -nop -c "Compress-Archive (Get-ChildItem '%unzipped%' -Exclude 'resources.arsc') '%dst_zip%' -Force ; Compress-Archive '%unzipped%\resources.arsc' -Update '%dst_zip%' -CompressionLevel NoCompression"
 exit /b
 
 
